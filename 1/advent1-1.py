@@ -6,11 +6,11 @@ sequence = sys.argv[1]
 previous = ''
 total = 0
 for c in sequence:
-	if c == previous:
-		total += int(c)
-	previous = c
+  if c == previous:
+    total += int(c)
+  previous = c
 
 if sequence[0] == previous:
-	total += int(previous)
+  total += int(previous)
 
 print total

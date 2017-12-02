@@ -5,19 +5,19 @@ sequence = sys.argv[1]
 # sequence = "1212"
 
 def atPosition(position, size):
-	newPosition = position + (size / 2)
-	if (newPosition >= size):
-		newPosition -= size
-	return newPosition
+  newPosition = position + (size / 2)
+  if (newPosition >= size):
+    newPosition -= size
+  return newPosition
 
 size = len(sequence)
 position = 0
 total = 0
 
 for c in sequence:
-	# print atPosition(position, size)
-	if c == sequence[atPosition(position, size)]:
-		total += int(c)
-	position += 1
+  # print atPosition(position, size)
+  if c == sequence[atPosition(position, size)]:
+    total += int(c)
+  position += 1
 
 print total
