@@ -2,23 +2,14 @@ import math
 import sys
 
 def stats(val):
-  if val <= 1:
-    return (0, 0, 0)
-
+  if val <= 1: return (0, 0, 0)
   root = int(math.ceil(math.sqrt(val)))
-  if math.pow(root, 2) == val:
-    return (val, root - 1, (root - 1) / 2)
-
   root += 1 if (root % 2 == 0) else 0
   max = root if root % 2 == 0 else root - 1
-  min = max / 2
-  return (int(math.pow(root, 2)), max, min)
+  return (root**2, max, max / 2)
 
 def calculate(stats):
-  current = stats[0]
-  while current - stats[1] >= entry:
-    current -= stats[1]
-  diff = current - entry
+  diff = (stats[0] - entry) % stats[2]
   if diff > stats[2]:
     print stats[2] + (diff - stats[2])
   else:
@@ -27,10 +18,6 @@ def calculate(stats):
 entry = int(sys.argv[1])
 stats = stats(entry)
 calculate(stats)
-
-# entry: 361527
-# wrong: 327 (too high)
-# right: 326
 
 # square = 3: max 2 steps, min 1 step
 # square = 5: max 4 steps, min 2 steps
